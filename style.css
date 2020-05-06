@@ -1,0 +1,41 @@
+@keyframes yoda {
+	0% {
+		background-color: #9cff9f;
+	}
+	50% {
+		background-color:#2d6e37;
+	}
+	100% {
+		background-color: #9cff9f;
+	}
+	
+}
+@keyframes walk {
+	0% {left:0%;}
+	100% {left:100%;}
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  animation: yoda 8s infinite;
+}
+
+h1 {
+  font-style: italic;
+  color: ##2bcf31;
+}
+
+#walking {
+	height: 150px;
+	position: fixed;
+	animation: walk 7s linear infinite;
+
+}
+
+#yulk {
+	position: relative;
+	left:-1135px;
+	top:-530px;
+	opacity:0;
+}
