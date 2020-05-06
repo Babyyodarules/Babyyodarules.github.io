@@ -1,0 +1,63 @@
+var yoda;
+var x = 30;
+var y = 460;
+var size = 230;
+var fall = 0;
+var jumps = 0;
+var level = 1;
+
+function level1 () {
+  fill(40, 94, 39) 
+  rect(0,665,874,300);
+}
+function level2 () {
+  clear()
+  x = 30
+  fill(40, 94, 39)
+  stroke(0, 0, 0)
+ rect(0,665,874,300);
+  fill(201, 37, 0)
+  stroke(201, 37, 0)
+ rect(300,664,200,150);
+}
+
+function preload() {
+ yoda = loadImage('baby yoda.png') 
+}
+
+function setup() {
+  createCanvas(875, 764);
+}
+
+function draw() {
+  background(220);
+  if(level === 1) {
+    level1()
+  }
+  if(level === 2) {
+    level2()
+  }
+    if (x>875) {
+    level = level + 1
+  }
+  image(yoda, x,y, size, size)
+  if (keyIsDown(LEFT_ARROW)) { x += -1 }
+  if (keyIsDown(RIGHT_ARROW)) {x +=1}
+  y+= fall
+  
+  if (y >= height - 75 - size && fall > 0) {
+    fall =  -0.08
+    jumps = 0
+  }
+    else {
+  fall += 0.08
+  
+}
+}
+function keyPressed () {
+ if (keyCode === 32 && jumps <4) {
+  fall = -2 
+  jumps += 1
+ }
+  
+}
